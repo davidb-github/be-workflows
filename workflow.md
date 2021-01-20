@@ -82,7 +82,7 @@ The import was not picked up automatically for some reason even with multiple sa
 1. Update the parse_url() method in request_handler.py  - book 1 - chapter 10
  - includes new parse logic to detect query string params
 1. Update the do_GET() method in request_handler.py - book 1 - chapter 10
-1. Update the models/customer.py model to implement default parameter values
+1. Update the models/customer.py model to implement default parameter values (Only needed for employees, not for practice)
 1. Update customers/request.py with new method get_customers_by_email(email)
 1. Update the customers/__init__.py to import new function get_customers_by_email
 1. Update request_handler.py to import new function: get_customers_by_email
