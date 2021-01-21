@@ -78,7 +78,7 @@ The import was not picked up automatically for some reason even with multiple sa
 1. Write SQL statements with a WHERE clause to get a single database row for the get_single_* functions.
 1. Request all resources with the Postman client and verify that all GET requests return the correct JSON representations.
 
-## Book 1 - Chapter 10
+## Book 1 - Chapter 10 - filter & query params
 1. Update the parse_url() method in request_handler.py  - book 1 - chapter 10
  - includes new parse logic to detect query string params
 1. Update the parse_url() do_GET method in request_handler.py
@@ -91,6 +91,16 @@ The import was not picked up automatically for some reason even with multiple sa
 1. request_handler.py response = get_customers_by_email(value) to response = f"{get_customers_by_email(value)}"
 1. Test in POSTMAN w/ http://localhost:8088/customers?email=jenna@solis.com
 
+## Book 1 - Chapter 11 - Delete by id
+1. Update animals/request.py with the delete_animal() function
+1. Update the animals/__init__.py to import new function delete_animal()
+1. Update request_handler.py to import new function: delete_animal()
+1. Test in Postman: GET all animals, note last id
+1. From the Postman client, perform a DELETE request to http://localhost:8088/animals/5
+1. Then request all animals again with a GET request to http://localhost:8088/animals
+1. Verify that the animal with an id of 5 is not in the response and got deleted from the database.
+1. If deleted record is needed - write INSERT INTO statement to add back deleted record
+- INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
 
 # Book 1 Col-2 Daily Journal Workflows
 
