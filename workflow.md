@@ -102,6 +102,16 @@ The import was not picked up automatically for some reason even with multiple sa
 1. If deleted record is needed - write INSERT INTO statement to add back deleted record
 - INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
 
+## Book1 - Chapter 13 - Update Animal Records
+1. Update animals/request.py with refactored update_animal function
+1. Update request_handler.py do_PUT method
+ - add new var named success and init to False
+ - update resource outcomes so return of update animal is stored in the sucess var
+ - Note: The remaining update_* functions do not return values but I went ahead and updated the function calls to store their return values in the sucess var. This was done with the expectation that the the remaining update functions will be refactored to return true/false return values.
+
+
+
+
 # Book 1 Col-2 Daily Journal Workflows
 
 ## Daily Journal - Chapter 8
