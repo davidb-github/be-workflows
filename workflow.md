@@ -109,7 +109,8 @@ The import was not picked up automatically for some reason even with multiple sa
  - update resource outcomes so return of update animal is stored in the sucess var
  - Note: The remaining update_* functions do not return values but I went ahead and updated the function calls to store their return values in the sucess var. This was done with the expectation that the the remaining update functions will be refactored to return true/false return values.
 
-
+## Book1 - Chapter 14 - SQL Join & GET
+1. 
 
 
 # Book 1 Col-2 Daily Journal Workflows
