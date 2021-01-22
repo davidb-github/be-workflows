@@ -115,7 +115,7 @@ The import was not picked up automatically for some reason even with multiple sa
 
 # Book 1 Col-2 Daily Journal Workflows
 
-## Daily Journal - Chapter 8
+## Daily Journal - Chapter 8 and 9
 
 1. Create a new sub-directory in your ~/workspace directory for this project. A good name would be daily-journal-server
 1. In your project directory, create a dailyjournal.db file to be your database
