@@ -113,14 +113,42 @@ The import was not picked up automatically for some reason even with multiple sa
 1. Add new property to the models/animal.py class definition.
  - New property: self.location = None
  - Not Do not add the new location property to the class input parameters unless the new parameter needs to be required when creating a new instance of the class. (self, id, name, breed, status, location_id, customer_id):
- 2. Update the animals/request.py get_all_animals() method
+ 1. Update the animals/request.py get_all_animals() method
  - update query to JOIN animal and location tables on their respective id columms
  - update the for loop so that: 
     - a new animal instance is created - recall the location property is an optional propertyso it must be added after the new instance is created
     - create a new location instance: NOTE: The chapter is missing row['id'] which is a required paramater when creating a new location instance
     - ``` location = Location(row['location_name'], row['location_address'])```
     - ``` location = Location(row['id'], row['location_name'], row['location_address'])```
+    
+ ### Chapter 14 Practice: Animals with embedded customer
+1. Add a customer property to the Animal model.
+1. Update the animals/request.py get_all_animals() method
+  - JOIN on the Customer table in your SQL query.
+1. Select all of the columns that are needed for an instance of a Customer. id, name & address
+- Refer to the models/customer.py for required fields/properties when creating a customer instance
+- Ensure all columns from the join have unique aliases for column name. id for location, name, 
+- location.__dict__ and customer.__dict__ 
+1. Also Treatment property is empty
+  - server code returns status but not treatment
+  - client code is wrong, update AnimalDetail.js line 24 animal.status and rename treatment to status
+  - Also update className to "animal_status"
+1. Create an instance of a Customer for each row in the results.
+1. Add that instance of a customer
 
+### Chapter 14 - unable to view animal card Cannot read property name of null
+1. AnimalDetail.js line 22
+1. This is because the current get_single_animal(id) method does not return location or customer properties
+
+### Chapter 14 - exception in create_animal
+1. python-kennel/animals/request.py, line 101
+ - Check the post headers tab and check payload. The treatment key is being sent rather than status.
+1. AnimalForm.js in updateAnimal and AddAnimal stuat: animal.treatment
+1. change treamment to status in the entire module
+
+### Chapter 14 - mismatched locationID from client versus location_id
+1. check animals/request.py create_animal locationId and customerId
+1. check the models/animal.py locationId = location_id
 
 # Book 1 Col-2 Daily Journal Workflows
 
