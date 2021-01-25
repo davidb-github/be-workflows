@@ -110,7 +110,16 @@ The import was not picked up automatically for some reason even with multiple sa
  - Note: The remaining update_* functions do not return values but I went ahead and updated the function calls to store their return values in the sucess var. This was done with the expectation that the the remaining update functions will be refactored to return true/false return values.
 
 ## Book1 - Chapter 14 - SQL Join & GET
-1. 
+1. Add new property to the models/animal.py class definition.
+ - New property: self.location = None
+ - Not Do not add the new location property to the class input parameters unless the new parameter needs to be required when creating a new instance of the class. (self, id, name, breed, status, location_id, customer_id):
+ 2. Update the animals/request.py get_all_animals() method
+ - update query to JOIN animal and location tables on their respective id columms
+ - update the for loop so that: 
+    - a new animal instance is created - recall the location property is an optional propertyso it must be added after the new instance is created
+    - create a new location instance: NOTE: The chapter is missing row['id'] which is a required paramater when creating a new location instance
+    - ``` location = Location(row['location_name'], row['location_address'])```
+    - ``` location = Location(row['id'], row['location_name'], row['location_address'])```
 
 
 # Book 1 Col-2 Daily Journal Workflows
