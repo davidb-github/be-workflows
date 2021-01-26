@@ -176,4 +176,15 @@ The import was not picked up automatically for some reason even with multiple sa
 
 
 
+# Kennels requests workflow - full stack
+
+1. Browser route changes to /animals
+1. Route component renders correct component
+1. Fetch call initiated to localhost:8088/animals
+1. do_GET() method in request_handler invoked
+1. get_all_animals in animals/request.py module
+1. Animals table in database queried
+1. Results are converted to JSON
+1. Response sent to client
+1. AnimalList component re-renders with new data
 
